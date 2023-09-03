@@ -38,3 +38,5 @@ Kata Sandi: None""")
     # wifi
     for w in df:
         print(f"\n{w}")
+
+os.system("title https://github.com/r0p1/tsksw.git")
