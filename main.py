@@ -29,11 +29,10 @@ if len(nama_profil) != 0:
                 profil_wifi["kata_sandi"] = kata_sandi[1]
             daftar_wifi.append(profil_wifi)
 
-for wifi in daftar_wifi:
-    print(wifi)
-
 # Mengkonversi daftar_wifi menjadi format JSON
 json_hasil = json.dumps(daftar_wifi, indent=4)
+
+print(json_hasil)
 
 # Menyimpan hasil JSON ke dalam file
 with open(nama_file, 'w') as file:
