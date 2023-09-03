@@ -5,13 +5,16 @@
 # github - https://github.com/r0p1/tksw     #
 #############################################
 
+import os
 import subprocess
 import re
 import json
 import datetime
 
+os.system("cls")
+
 sekarang = datetime.datetime.now()
-nama_file = f"hasil_wifi_{sekarang.strftime('%d-%m-%Y_%H-%M-%S')}.json"
+nama_file = f"{sekarang.strftime('%d-%m-%Y_%H-%M-%S')}.json"
 hasil_perintah = subprocess.run(["netsh", "wlan", "show", "profiles"], capture_output=True).stdout.decode()
 nama_profil = re.findall("All User Profile     : (.*)\r", hasil_perintah)
 
@@ -49,7 +52,7 @@ with open(nama_file, 'w') as file:
     file.write("# deskripsi - temukan semua kata sandi wifi #\n")
     file.write("# pembuat- rofi                             #\n")
     file.write("# github - https://github.com/r0p1/tksw     #\n")
-    file.write("#############################################\n")
+    file.write("#############################################\n\n")
     file.write(hasil_json)
 
 print(f"\nHasil telah disimpan dalam file: {nama_file}\n")
