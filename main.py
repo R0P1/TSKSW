@@ -31,4 +31,4 @@ Kata Sandi: None
  """)
 
     for wifi in daftar_wifi:
-        print(f"\n{wifi}")
+        print(f"{wifi}")
