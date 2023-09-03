@@ -34,4 +34,4 @@ with open(nama_file, 'w') as file:
     print()
     for wifi in daftar_wifi:
         print(f"{wifi}")
-        file.write(f"{wifi}\n")
+        file.write(f"{wifi}")
