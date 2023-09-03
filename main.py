@@ -32,5 +32,5 @@ if len(nama_profil) != 0:
 with open(nama_file, 'w') as file:
     print()
     for wifi in daftar_wifi:
-        print(f"{wifi}")
+        print(f"\n{wifi}")
         file.write(f"{wifi}")
