@@ -27,8 +27,7 @@ if len(nama_profil) != 0:
                 daftar_wifi.append(f"SSID: {nama}, Kata Sandi: None")
             else:
                 daftar_wifi.append(f""" SSID: {nama}
- Kata Sandi: {kata_sandi[1]}
-""")
+ Kata Sandi: {kata_sandi[1]}""")
 
 with open(nama_file, 'w') as file:
     print()
