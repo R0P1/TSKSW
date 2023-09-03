@@ -14,7 +14,7 @@ import datetime
 os.system("cls")
 
 sekarang = datetime.datetime.now()
-nama_file = f"{sekarang.strftime('%d-%m-%Y_%H:%M:%S')}.json"
+nama_file = f"{sekarang.strftime('%d-%m-%Y_%H-%M-%S')}.json"
 hasil_perintah = subprocess.run(["netsh", "wlan", "show", "profiles"], capture_output=True).stdout.decode()
 nama_profil = re.findall("All User Profile     : (.*)\r", hasil_perintah)
 
