@@ -33,11 +33,10 @@ if len(nama_profil) != 0:
 
 hasil_json = json.dumps(daftar_wifi, indent=4)
 
-print(hasil_json)
+print(f"\n{hasil_json}")
 
-# Menyimpan hasil JSON ke dalam file
 with open(nama_file, 'w') as file:
     file.write(hasil_json)
 
-print(f"\nHasil telah disimpan dalam file: {nama_file}")
+print(f"\nHasil telah disimpan dalam file: {nama_file}\n")
             
