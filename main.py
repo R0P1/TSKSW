@@ -1,3 +1,6 @@
+# TSKSW (TEMUKAN SEMUA KATA SANDI WIFI)
+# - ROFI -
+
 import os
 import subprocess
 import re
@@ -40,12 +43,6 @@ hasil_json = json.dumps(daftar_wifi, indent=4)
 print(f"\n{hasil_json}")
 
 with open(nama_file, 'w') as file:
-    file.write("################################################\n")
-    file.write("# Program   - TKSW                             #\n")
-    file.write("# Deskripsi - Temukan semua kata sandi wifi    #\n")
-    file.write("# Pembuat   - Rofi                             #\n")
-    file.write("# Github    - https://github.com/r0p1/tksw     #\n")
-    file.write("################################################\n\n")
     file.write(hasil_json)
 
 print(f"\nHasil telah disimpan dalam file: {nama_file}\n")
