@@ -8,25 +8,31 @@ import datetime
 
 os.system("cls")
 
-hasil_perintah = subprocess.run(["netsh", "wlan", "show", "profiles"], capture_output=True).stdout.decode()
-nama_profil = re.findall("All User Profile     : (.*)\r", hasil_perintah)
+# hasil perintah 
+hs = subprocess.run(["netsh", "wlan", "show", "profiles"], capture_output=True).stdout.decode()
+# nama profil 
+np = re.findall("All User Profile     : (.*)\r", hs)
 
-daftar_wifi = []
+# daftar wifi 
+df = []
 
-if len(nama_profil) != 0:
-    for nama in nama_profil:
-        info_profil = subprocess.run(["netsh", "wlan", "show", "profil", nama], capture_output=True).stdout.decode()
-        if re.search("Security key           : Absent", info_profil):
+if len(np) != 0:
+    for n in np:
+        # info profil 
+        ip = subprocess.run(["netsh", "wlan", "show", "profil", n], capture_output=True).stdout.decode()
+        if re.search("Security key           : Absent", ip):
             continue
         else:
-            info_kunci_pass = subprocess.run(["netsh", "wlan", "show", "profil", nama, "key=clear"], capture_output=True).stdout.decode()
-            kata_sandi = re.search("Key Content            : (.*)\r", info_kunci_pass)
-            if kata_sandi is None:
-                daftar_wifi.append(f"""SSID: {nama}
+            # info kunci pass
+            ikp = subprocess.run(["netsh", "wlan", "show", "profil", n, "key=clear"], capture_output=True).stdout.decode()
+            # kata sandi 
+            ks = re.search("Key Content            : (.*)\r", ikp)
+            if ks is None:
+                df.append(f"""SSID: {n}
 Kata Sandi: None""")
             else:
-                daftar_wifi.append(f""" SSID: {nama}
- Kata Sandi: {kata_sandi[1]}""")
+                df.append(f""" SSID: {n}
+ Kata Sandi: {ks[1]}""")
 
-    for wifi in daftar_wifi:
-        print(f"\n{wifi}")
+    for w in df:
+        print(f"\n{w}")
