@@ -7,7 +7,6 @@ import re
 import datetime
 
 os.system("cls")
-os.system("title https://github.com/r0p1/tsksw.git")
 
 # hasil perintah 
 hs = subprocess.run(["netsh", "wlan", "show", "profiles"], capture_output=True).stdout.decode()
@@ -38,5 +37,3 @@ Kata Sandi: None""")
     # wifi
     for w in df:
         print(f"\n{w}")
-
-os.system("title https://github.com/r0p1/tsksw.git")
