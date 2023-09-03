@@ -36,4 +36,4 @@ hasil_json = json.dumps(daftar_wifi, indent=4)
 with open(nama_file, 'w') as file:
     file.write(hasil_json)
 
-print(f"Hasil telah disimpan dalam file: {nama_file}"
+print(f"Hasil telah disimpan dalam file: {nama_file}")
