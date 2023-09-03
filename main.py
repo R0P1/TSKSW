@@ -29,4 +29,4 @@ Kata Sandi: None""")
  Kata Sandi: {kata_sandi[1]}""")
 
     for wifi in daftar_wifi:
-        print(f"{wifi}")
+        print(f"\n{wifi}")
