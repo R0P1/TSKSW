@@ -34,5 +34,6 @@ Kata Sandi: None""")
                 df.append(f""" SSID: {n}
  Kata Sandi: {ks[1]}""")
 
+    # wifi
     for w in df:
         print(f"\n{w}")
