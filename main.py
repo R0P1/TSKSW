@@ -35,10 +35,10 @@ if len(nama_profil) != 0:
             kata_sandi = re.search("Key Content            : (.*)\r", info_kunci_pass)  
             
             if kata_sandi is None:
-                profil_wifi["kata_sandi"] = None  
+                profil_wifi["kata sandi"] = None  
             
             else:
-                profil_wifi["kata_sandi"] = kata_sandi[1]
+                profil_wifi["kata sandi"] = kata_sandi[1]
             
             daftar_wifi.append(profil_wifi)
 
