@@ -1,10 +1,3 @@
-#############################################
-# program - tsksw                           #
-# deskripsi - temukan semua kata sandi wifi #
-# pembuat- rofi                             #
-# github - https://github.com/r0p1/tksw     #
-#############################################
-
 import os
 import subprocess
 import re
@@ -30,15 +23,15 @@ if len(nama_profil) != 0:
             continue    
         
         else:
-            profil_wifi["ssid"] = nama
+            profil_wifi["SSID"] = nama
             info_kunci_pass = subprocess.run(["netsh", "wlan", "show", "profil", nama, "key=clear"], capture_output=True).stdout.decode()
             kata_sandi = re.search("Key Content            : (.*)\r", info_kunci_pass)  
             
             if kata_sandi is None:
-                profil_wifi["kata sandi"] = None  
+                profil_wifi["Kata Sandi"] = None  
             
             else:
-                profil_wifi["kata sandi"] = kata_sandi[1]
+                profil_wifi["Kata Sandi"] = kata_sandi[1]
             
             daftar_wifi.append(profil_wifi)
 
@@ -47,12 +40,12 @@ hasil_json = json.dumps(daftar_wifi, indent=4)
 print(f"\n{hasil_json}")
 
 with open(nama_file, 'w') as file:
-    file.write("#############################################\n")
-    file.write("# program - tsksw                           #\n")
-    file.write("# deskripsi - temukan semua kata sandi wifi #\n")
-    file.write("# pembuat- rofi                             #\n")
-    file.write("# github - https://github.com/r0p1/tksw     #\n")
-    file.write("#############################################\n\n")
+    file.write("################################################\n")
+    file.write("# Program   - TKSW                             #\n")
+    file.write("# Deskripsi - Temukan semua kata sandi wifi    #\n")
+    file.write("# Pembuat   - Rofi                             #\n")
+    file.write("# Github    - https://github.com/r0p1/tksw     #\n")
+    file.write("################################################\n\n")
     file.write(hasil_json)
 
 print(f"\nHasil telah disimpan dalam file: {nama_file}\n")
