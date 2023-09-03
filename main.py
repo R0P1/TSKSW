@@ -31,8 +31,8 @@ Kata Sandi: {kata_sandi[1]}
 """)
 
 with open(nama_file, 'w') as file:
-    for item in daftar_wifi:
-        prinr(f"\n{item}")
-        file.write(f"{item}\n")
+    for wifi in daftar_wifi:
+        prinr(f"\n{wifi}")
+        file.write(f"{wifi}\n")
 
 print(f"\nHasil telah disimpan dalam file: {nama_file}\n")
