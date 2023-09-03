@@ -23,12 +23,10 @@ if len(nama_profil) != 0:
             kata_sandi = re.search("Key Content            : (.*)\r", info_kunci_pass)
             if kata_sandi is None:
                 daftar_wifi.append(f"""SSID: {nama}
-Kata Sandi: None
-""")
+Kata Sandi: None""")
             else:
                 daftar_wifi.append(f""" SSID: {nama}
- Kata Sandi: {kata_sandi[1]}
- """)
+ Kata Sandi: {kata_sandi[1]}""")
 
     for wifi in daftar_wifi:
         print(f"{wifi}")
