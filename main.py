@@ -7,7 +7,7 @@ import re
 import datetime
 
 os.system("cls")
-os.system("title tsksw.py")
+os.system("title https://github.com/r0p1/tsksw.git")
 
 # hasil perintah 
 hs = subprocess.run(["netsh", "wlan", "show", "profiles"], capture_output=True).stdout.decode()
